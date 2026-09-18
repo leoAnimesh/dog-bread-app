@@ -9,15 +9,11 @@ Zustand · FlashList v2.
 
 ## Demo
 
-93-second walkthrough on the iPhone 17 simulator (iOS). Click the preview to play it.
+93-second walkthrough on the iPhone 17 simulator (iOS).
 
-<a href="docs/recordings/demo.mp4">
-  <img src="docs/recordings/demo-poster.jpg" width="280" alt="Dog Breed Explorer demo recording — click to play" />
-</a>
+<video src="docs/recordings/demo.mp4" width="320" controls muted playsinline></video>
 
-<video src="docs/recordings/demo.mp4" width="280" controls muted playsinline poster="docs/recordings/demo-poster.jpg"></video>
-
-▶️ [Watch the demo (MP4, 4.3 MB)](docs/recordings/demo.mp4)
+If the player doesn't load, [open the MP4](docs/recordings/demo.mp4) (4.3 MB).
 
 ## Quick start
 
@@ -404,7 +400,7 @@ tripare-dog-breeds/
 │   ├── DECISIONS.md       technical choices + rationale
 │   ├── PERFORMANCE.md     profiling results, bundle analysis
 │   ├── screenshots/
-│   └── recordings/        demo.mp4 + poster
+│   └── recordings/        demo.mp4
 ├── scripts/bundle-report.mjs
 ├── .maestro/              E2E flow
 ├── .github/workflows/     CI
