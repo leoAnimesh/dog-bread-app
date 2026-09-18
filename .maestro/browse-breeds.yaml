@@ -1,0 +1,28 @@
+# Critical flow: launch → list renders from sync/cache → search → open detail → Traits tab.
+# Run against Expo Go on a simulator:  maestro test .maestro/browse-breeds.yaml
+appId: host.exp.Exponent
+---
+- launchApp
+- extendedWaitUntil:
+    visible:
+      id: "breed-list"
+    timeout: 30000
+- assertVisible: "Breeds"
+- tapOn:
+    id: "breed-search"
+- inputText: "collie"
+- extendedWaitUntil:
+    visible: "Border Collie"
+    timeout: 5000
+- tapOn: "Border Collie"
+- assertVisible:
+    id: "breed-detail-screen"
+- assertVisible: "Overview"
+- tapOn:
+    id: "detail-tab-traits"
+- assertVisible: "Daily life & care"
+- assertVisible: "Sociability"
+- tapOn:
+    id: "detail-back"
+- assertVisible:
+    id: "breed-list"

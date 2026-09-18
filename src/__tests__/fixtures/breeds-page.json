@@ -1,0 +1,454 @@
+{
+  "data": [
+    {
+      "id": "036feed0-da8a-42c9-ab9a-57449b530b13",
+      "type": "breed",
+      "attributes": {
+        "name": "Affenpinscher",
+        "description": "The Affenpinscher is a small and playful breed of dog that was originally bred in Germany for hunting small game. They are intelligent, energetic, and affectionate, and make excellent companion dogs.",
+        "life": {
+          "max": 16,
+          "min": 14
+        },
+        "male_weight": {
+          "max": 6,
+          "min": 4
+        },
+        "female_weight": {
+          "max": 6,
+          "min": 4
+        },
+        "hypoallergenic": true,
+        "male_height": {
+          "max": 29,
+          "min": 23
+        },
+        "female_height": {
+          "max": 29,
+          "min": 23
+        },
+        "origin": {
+          "era": "17th century",
+          "region": "Central Europe",
+          "country": "Germany"
+        },
+        "coat": {
+          "type": "wire",
+          "colors": [
+            "black",
+            "gray",
+            "silver",
+            "red",
+            "black and tan"
+          ],
+          "length": "short"
+        },
+        "traits": {
+          "energy": 3,
+          "barking": 3,
+          "drooling": 1,
+          "grooming": 3,
+          "shedding": 2,
+          "temperament": [
+            "confident",
+            "curious",
+            "stubborn",
+            "playful",
+            "alert",
+            "mischievous"
+          ],
+          "trainability": 3,
+          "good_with_dogs": 3,
+          "exercise_minutes": 30,
+          "apartment_friendly": 5,
+          "good_with_children": 3,
+          "good_with_strangers": 2
+        },
+        "other_names": [
+          "Monkey Terrier",
+          "Affen",
+          "Diablotin Moustachu"
+        ],
+        "recognized_by": [
+          "AKC",
+          "FCI",
+          "UKC",
+          "KC",
+          "CKC",
+          "ANKC",
+          "NZKC"
+        ],
+        "sources": [
+          {
+            "url": "https://images.akc.org/pdf/breeds/standards/Affenpinscher.pdf",
+            "title": "Official Standard of the Affenpinscher (AKC)"
+          }
+        ],
+        "images": [
+          {
+            "id": "1861dc37-a00b-4e34-b9b8-8c03b6e58b61",
+            "url": "https://images.dogapi.dog/01v98q4ttqulz609aw8r5h8i1g44",
+            "thumb": "https://images.dogapi.dog/zpwegcab6hzq09q0eyl8oxf66lve",
+            "medium": "https://images.dogapi.dog/f57sae5b2xqi6pxdq6r8tw1h4c8t",
+            "large": "https://images.dogapi.dog/21mg55zlym6nq3o6cm56v0itkdad",
+            "attribution": {
+              "author": "Futurebreak",
+              "license": "CC0",
+              "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Affenpinscher_breed.jpg"
+            }
+          },
+          {
+            "id": "add89f7d-2d3c-4e45-9752-8691c2ed5324",
+            "url": "https://images.dogapi.dog/6yxkty9uxjqu88oaatkeh61gudor",
+            "thumb": "https://images.dogapi.dog/lb77ge24lydsghqozajjik9fyw8u",
+            "medium": "https://images.dogapi.dog/t78mfk32frxrfsr9hipqqtfnj4zc",
+            "large": "https://images.dogapi.dog/wtkz5owjefxeuylfeag1gmf43pqb",
+            "attribution": {
+              "author": "Kristy May for Pets Advisor www.petful.com - Uploaded at Petful",
+              "license": "CC BY 2.0",
+              "license_url": "https://creativecommons.org/licenses/by/2.0",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:2013_Westminster_Kennel_Club_Dog_Show-_Affenpinscher_Joey_aka_GCH_Banana_Joe_V_Tani_Kazari_(8471258772).jpg"
+            }
+          }
+        ]
+      },
+      "relationships": {
+        "group": {
+          "data": {
+            "id": "f56dc4b1-ba1a-4454-8ce2-bd5d41404a0c",
+            "type": "group"
+          }
+        }
+      }
+    },
+    {
+      "id": "bba868bb-71ce-4e66-9970-861fb5af642f",
+      "type": "breed",
+      "attributes": {
+        "name": "American Hairless Terrier",
+        "description": "The American Hairless Terrier is a small to medium-sized breed of terrier that originated in the United States. It is the hairless variety of the Rat Terrier, and was developed by breeding selectively for the gene that causes the hairlessness. The Hairless variety is considered to have a more mellow and laid-back temperament than its coated counterpart, and is an active and intelligent breed that loves to please and stay busy. The breed stands between 12-16 inches at the shoulder and comes in a variety of colors.",
+        "life": {
+          "max": 14,
+          "min": 12
+        },
+        "male_weight": {
+          "max": 6,
+          "min": 5
+        },
+        "female_weight": {
+          "max": 7,
+          "min": 6
+        },
+        "hypoallergenic": false,
+        "male_height": {
+          "max": 41,
+          "min": 30
+        },
+        "female_height": {
+          "max": 41,
+          "min": 30
+        },
+        "origin": {
+          "era": "1970s",
+          "region": "Louisiana",
+          "country": "United States"
+        },
+        "coat": {
+          "type": "hairless",
+          "colors": [
+            "black",
+            "white",
+            "tan",
+            "sable",
+            "brindle",
+            "particolor"
+          ],
+          "length": "hairless"
+        },
+        "traits": {
+          "energy": 4,
+          "barking": 3,
+          "drooling": 1,
+          "grooming": 2,
+          "shedding": 1,
+          "temperament": [
+            "energetic",
+            "alert",
+            "curious",
+            "intelligent",
+            "affectionate",
+            "loyal"
+          ],
+          "trainability": 4,
+          "good_with_dogs": 4,
+          "exercise_minutes": 45,
+          "apartment_friendly": 4,
+          "good_with_children": 4,
+          "good_with_strangers": 3
+        },
+        "other_names": [
+          "AHT"
+        ],
+        "recognized_by": [
+          "AKC",
+          "UKC"
+        ],
+        "sources": [
+          {
+            "url": "https://images.akc.org/pdf/breeds/standards/AmericanHairlessTerrier.pdf",
+            "title": "Official Standard of the American Hairless Terrier - AKC"
+          }
+        ],
+        "images": [
+          {
+            "id": "ac3024d4-eace-43eb-b9ea-5fdfaeecd455",
+            "url": "https://images.dogapi.dog/bj98gam16ioej3p1zwuyjpo9bv43",
+            "thumb": "https://images.dogapi.dog/5xxxjwgxsolqk4w2o09d9k5y95z2",
+            "medium": "https://images.dogapi.dog/11xflnv47qjhcopmzfke3mtz5qcp",
+            "large": "https://images.dogapi.dog/16ig6nl045xcpktek29bb3kkva4k",
+            "attribution": {
+              "author": "Nyaah",
+              "license": "CC BY-SA 3.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:American_Hairless_Terrier_Adelor.jpg"
+            }
+          },
+          {
+            "id": "5bee52cc-f365-4030-a43d-cc30bfb4c0ea",
+            "url": "https://images.dogapi.dog/8gjdttke2echsgh6dypguxg8tsle",
+            "thumb": "https://images.dogapi.dog/yly9elo4auz9du2oyupexa2epmbz",
+            "medium": "https://images.dogapi.dog/4z6o6hbdrd08kfo4i75eco44r07j",
+            "large": "https://images.dogapi.dog/xjx9emwfaiy4n54p7rb5mg6hah39",
+            "attribution": {
+              "author": "MarvelousVision",
+              "license": "CC BY-SA 3.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:AHT_frisbee.jpg"
+            }
+          }
+        ]
+      },
+      "relationships": {
+        "group": {
+          "data": {
+            "id": "1bbf373b-1937-4e73-9863-45385daa4979",
+            "type": "group"
+          }
+        }
+      }
+    },
+    {
+      "id": "406e8454-d350-4187-9788-6d857ee52e06",
+      "type": "breed",
+      "attributes": {
+        "name": "Bavarian Mountain Scent Hound",
+        "description": "The Bavarian Mountain Scent Hound is a medium-sized breed of dog that was originally bred in Germany for hunting small game. They are intelligent, energetic, and determined, and make excellent hunting dogs.",
+        "life": {
+          "max": 15,
+          "min": 12
+        },
+        "male_weight": {
+          "max": 30,
+          "min": 20
+        },
+        "female_weight": {
+          "max": 30,
+          "min": 20
+        },
+        "hypoallergenic": false,
+        "male_height": {},
+        "female_height": {},
+        "origin": {},
+        "coat": {},
+        "traits": {},
+        "other_names": [],
+        "recognized_by": [],
+        "sources": [],
+        "images": [
+          {
+            "id": "a5d95f97-0af2-4146-8eda-57c5e2707eb6",
+            "url": "https://images.dogapi.dog/ha10jqhr1g3x1p663p0nwgyv2myh",
+            "thumb": "https://images.dogapi.dog/eyfqjtlxk3j7ct1tbm82rp1f1m5j",
+            "medium": "https://images.dogapi.dog/3ljww2e0kp1siefra6f6iz4zhsb0",
+            "large": "https://images.dogapi.dog/18de6euxz2v3nsw31hypqh74i68m",
+            "attribution": {
+              "author": "Ralf Lotys (Sicherlich)",
+              "license": "CC BY 2.5",
+              "license_url": "https://creativecommons.org/licenses/by/2.5",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:2005-09_Zoran_1.jpg"
+            }
+          },
+          {
+            "id": "1ce60e1d-37e8-4556-aa6e-128eb5d25e1d",
+            "url": "https://images.dogapi.dog/e2xn50gaebtlutyyjg9tu0is9yy4",
+            "thumb": "https://images.dogapi.dog/bji9zrrdco9sdro9umpdb8d55lys",
+            "medium": "https://images.dogapi.dog/twgtnhaczazk3h53eentomo50lim",
+            "large": "https://images.dogapi.dog/oksv1puaula4ylrb0dlkd2tfoyui",
+            "attribution": {
+              "author": "Ralf Lotys (Sicherlich)",
+              "license": "CC BY 2.5",
+              "license_url": "https://creativecommons.org/licenses/by/2.5",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:2005-09_Zoran_3.jpg"
+            }
+          }
+        ]
+      },
+      "relationships": {
+        "group": {
+          "data": {
+            "id": "8000793f-a1ae-4ec4-8d55-ef83f1f644e5",
+            "type": "group"
+          }
+        }
+      }
+    },
+    {
+      "id": "e7e99424-d514-4b56-9f0c-05736f6dd22d",
+      "type": "breed",
+      "attributes": {
+        "name": "Akita",
+        "description": "The Akita is a large, muscular dog breed that originated in Japan. They are known for their loyalty and courage.",
+        "life": {
+          "max": 14,
+          "min": 10
+        },
+        "male_weight": {
+          "max": 60,
+          "min": 35
+        },
+        "female_weight": {
+          "max": 50,
+          "min": 35
+        },
+        "hypoallergenic": false,
+        "male_height": {
+          "max": 71,
+          "min": 66
+        },
+        "female_height": {
+          "max": 66,
+          "min": 61
+        },
+        "origin": {
+          "era": "17th-19th century",
+          "region": "Akita Prefecture",
+          "country": "Japan"
+        },
+        "coat": {
+          "type": "double",
+          "colors": [
+            "red",
+            "fawn",
+            "sesame",
+            "brindle",
+            "white",
+            "pinto"
+          ],
+          "length": "medium"
+        },
+        "traits": {
+          "energy": 3,
+          "barking": 2,
+          "drooling": 2,
+          "grooming": 3,
+          "shedding": 5,
+          "temperament": [
+            "dignified",
+            "courageous",
+            "alert",
+            "responsive",
+            "loyal",
+            "reserved with strangers"
+          ],
+          "trainability": 3,
+          "good_with_dogs": 1,
+          "exercise_minutes": 60,
+          "apartment_friendly": 2,
+          "good_with_children": 3,
+          "good_with_strangers": 2
+        },
+        "other_names": [
+          "Akita Inu",
+          "Japanese Akita",
+          "American Akita",
+          "Akita Ken",
+          "Great Japanese Dog"
+        ],
+        "recognized_by": [
+          "AKC",
+          "FCI",
+          "UKC",
+          "KC",
+          "CKC",
+          "ANKC",
+          "NZKC"
+        ],
+        "sources": [
+          {
+            "url": "https://images.akc.org/pdf/breeds/standards/Akita.pdf",
+            "title": "Official Standard of the Akita (AKC)"
+          }
+        ],
+        "images": [
+          {
+            "id": "bf3d54f2-f179-4760-8da6-8b9b1751ea0c",
+            "url": "https://images.dogapi.dog/5mxmtopo6d1j31c2fdzpj3ly9ci4",
+            "thumb": "https://images.dogapi.dog/s38hdktq86v1yvdc0yywdqr38lfj",
+            "medium": "https://images.dogapi.dog/y8ocwzrrb8x045bow6r9l9rsd2rc",
+            "large": "https://images.dogapi.dog/gm1pcg0vbtzer9ih4xcrmgkzzf80",
+            "attribution": {
+              "author": "Jon Cano",
+              "license": "CC BY-SA 4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Inu_Face_Daiju.jpg"
+            }
+          },
+          {
+            "id": "0eb0fe6a-e6ea-461b-8b82-a6c494f755c8",
+            "url": "https://images.dogapi.dog/3rwrr11qvq3a5umd9hycns3wzf9x",
+            "thumb": "https://images.dogapi.dog/81vod131huhi1amtuz42v2qa4yhf",
+            "medium": "https://images.dogapi.dog/pnw8dtsqigv6u4k29h7v5q7bfnue",
+            "large": "https://images.dogapi.dog/vnjejxkddlnnouf2lms4gse0w5pb",
+            "attribution": {
+              "author": "Adventurous36",
+              "license": "CC BY-SA 4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Inu_20191115-143723-1.jpg"
+            }
+          }
+        ]
+      },
+      "relationships": {
+        "group": {
+          "data": {
+            "id": "56081cf0-fdf2-4114-9bf7-23a3f5b6af91",
+            "type": "group"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current": 1,
+      "next": 2,
+      "last": 6,
+      "records": 283
+    }
+  },
+  "links": {
+    "self": "https://dogapi.dog/api/v2/breeds?page%5Bnumber%5D=1&page%5Bsize%5D=48",
+    "current": "https://dogapi.dog/api/v2/breeds?page[number]=1&page[size]=48",
+    "next": "https://dogapi.dog/api/v2/breeds?page[number]=2&page[size]=48",
+    "last": "https://dogapi.dog/api/v2/breeds?page[number]=6&page[size]=48"
+  }
+}
