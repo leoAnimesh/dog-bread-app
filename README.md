@@ -27,6 +27,10 @@ The app runs in **Expo Go**, so no native build is needed. Metro opens the simul
 Expo Go automatically. Requirements: Node 20+ and Xcode (iOS) or Android Studio (Android) with a
 simulator or emulator.
 
+A committed `.npmrc` sets `legacy-peer-deps=true`, so plain `npm install` works. It is needed
+because `@testing-library/react-native` 14 declares peer ranges that npm's resolver rejects
+alongside Expo SDK 57, even though the versions work together (all tests pass).
+
 ```bash
 npm test             # 73 tests / 11 suites
 npm run typecheck    # tsc --noEmit, strict
