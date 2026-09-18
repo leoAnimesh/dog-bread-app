@@ -1,4 +1,5 @@
 import type { Database } from '../database';
+import { serializeWrite } from '../writeQueue';
 
 export type ImageVariant = 'thumb' | 'medium' | 'large';
 
@@ -47,23 +48,29 @@ export function createImageCacheRepository(db: Database): ImageCacheRepository {
     },
 
     async upsert(entry) {
-      await db.runAsync(
-        `INSERT INTO image_cache (url, local_uri, variant, bytes, last_access) VALUES (?, ?, ?, ?, ?)
+      await serializeWrite(db, () =>
+        db.runAsync(
+          `INSERT INTO image_cache (url, local_uri, variant, bytes, last_access) VALUES (?, ?, ?, ?, ?)
          ON CONFLICT(url) DO UPDATE SET
            local_uri = excluded.local_uri, variant = excluded.variant,
            bytes = excluded.bytes, last_access = excluded.last_access`,
-        [entry.url, entry.localUri, entry.variant, entry.bytes, entry.lastAccess],
+          [entry.url, entry.localUri, entry.variant, entry.bytes, entry.lastAccess],
+        ),
       );
     },
 
     async touch(url, now) {
-      await db.runAsync('UPDATE image_cache SET last_access = ? WHERE url = ?', [now, url]);
+      await serializeWrite(db, () =>
+        db.runAsync('UPDATE image_cache SET last_access = ? WHERE url = ?', [now, url]),
+      );
     },
 
     async remove(urls) {
       if (urls.length === 0) return;
       const placeholders = urls.map(() => '?').join(', ');
-      await db.runAsync(`DELETE FROM image_cache WHERE url IN (${placeholders})`, [...urls]);
+      await serializeWrite(db, () =>
+        db.runAsync(`DELETE FROM image_cache WHERE url IN (${placeholders})`, [...urls]),
+      );
     },
 
     async totalBytes() {
@@ -74,7 +81,7 @@ export function createImageCacheRepository(db: Database): ImageCacheRepository {
     },
 
     async clear() {
-      await db.execAsync('DELETE FROM image_cache');
+      await serializeWrite(db, () => db.execAsync('DELETE FROM image_cache'));
     },
   };
 }

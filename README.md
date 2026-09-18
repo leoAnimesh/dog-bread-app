@@ -32,7 +32,7 @@ because `@testing-library/react-native` 14 declares peer ranges that npm's resol
 alongside Expo SDK 57, even though the versions work together (all tests pass).
 
 ```bash
-npm test             # 73 tests / 11 suites
+npm test             # 76 tests / 12 suites
 npm run typecheck    # tsc --noEmit, strict
 npm run lint         # eslint-config-expo, no-explicit-any = error
 npm run bundle:analyze
@@ -316,6 +316,11 @@ cache held **159 files, 4.5 MB** on disk, well within the 60 MB limit.
 
 ### Memory usage screenshot
 
+Release build on the iPhone 17 simulator, measured with `footprint` (the same `phys_footprint`
+figure Xcode's memory gauge shows): **100–108 MB, peak 108 MB** after a cold start, a full
+283-breed sync and the list rendered with thumbnails. That is under the 150 MB target.
+Methodology is in [PERFORMANCE.md](docs/PERFORMANCE.md#memory).
+
 <!-- RECORDING: release build (npx expo run:ios --configuration Release) → Xcode Debug navigator
      → Memory gauge while scrolling the full list and opening 3 detail screens.
      Save as docs/screenshots/perf-memory.png. Target: < 150 MB. -->
@@ -427,7 +432,7 @@ Everything is in `.env.example`. Every variable has a default, so the app also s
 
 ## Tests
 
-`npm test` runs 73 tests in 11 suites:
+`npm test` runs 76 tests in 12 suites:
 
 - **Domain:** size bands; messy coat data (wire, hairless, null).
 - **Filters:** predicates and search.
@@ -435,6 +440,8 @@ Everything is in `.env.example`. Every variable has a default, so the app also s
 - **Sync:** assembling the 6 pages, partial failure, retrying only failed pages, collapsing
   simultaneous sync requests, detail refresh.
 - **Coordinator:** staleness rules, queuing offline and running on reconnect.
+- **Database writes:** the write queue never lets two writes overlap, and one failed write
+  doesn't block the next.
 - **Image cache:** LRU eviction.
 - **List and utils:** grouped-section building, relative time formatting.
 - **Components:** rendered in light and dark with React Native Testing Library.

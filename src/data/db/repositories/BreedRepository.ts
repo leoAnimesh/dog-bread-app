@@ -2,6 +2,7 @@ import type { Breed } from '@/domain';
 import { isRecord } from '@/utils/guards';
 
 import type { Database } from '../database';
+import { serializeWrite } from '../writeQueue';
 
 export interface BreedRepository {
   getAll(): Promise<Breed[]>;
@@ -84,24 +85,26 @@ export function createBreedRepository(db: Database): BreedRepository {
 
     async upsertMany(breeds, pageNumber, now) {
       if (breeds.length === 0) return;
-      await db.withExclusiveTransactionAsync(async (tx) => {
-        const statement = await tx.prepareAsync(UPSERT_SQL);
-        try {
-          for (const breed of breeds) {
-            await statement.executeAsync(toParams(breed, pageNumber, now));
+      await serializeWrite(db, () =>
+        db.withExclusiveTransactionAsync(async (tx) => {
+          const statement = await tx.prepareAsync(UPSERT_SQL);
+          try {
+            for (const breed of breeds) {
+              await statement.executeAsync(toParams(breed, pageNumber, now));
+            }
+          } finally {
+            await statement.finalizeAsync();
           }
-        } finally {
-          await statement.finalizeAsync();
-        }
-      });
+        }),
+      );
     },
 
     async upsert(breed, now) {
-      await db.runAsync(UPSERT_SQL, toParams(breed, null, now));
+      await serializeWrite(db, () => db.runAsync(UPSERT_SQL, toParams(breed, null, now)));
     },
 
     async clear() {
-      await db.execAsync('DELETE FROM breeds');
+      await serializeWrite(db, () => db.execAsync('DELETE FROM breeds'));
     },
   };
 }

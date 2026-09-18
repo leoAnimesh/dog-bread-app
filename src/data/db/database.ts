@@ -12,6 +12,9 @@ export const DATABASE_NAME = 'dogbreeds.db';
  */
 export async function openDatabase(name: string = DATABASE_NAME): Promise<Database> {
   const db = await SQLite.openDatabaseAsync(name);
+  // Wait briefly on a lock instead of failing at once (belt and braces:
+  // app writes are already serialised by serializeWrite).
+  await db.execAsync('PRAGMA busy_timeout = 5000');
   await migrate(db);
   return db;
 }

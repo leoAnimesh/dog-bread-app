@@ -79,6 +79,24 @@ galleries, the cache directory held **159 files, 4.5 MB**. Rough sizes per image
 about 4–15 KB, a medium 40–80 KB, a large 150–400 KB. The 60 MB LRU budget therefore holds every
 thumb plus more than 100 large images before it starts deleting files.
 
+## Memory
+
+Measured on a **Release build** (`npx expo run:ios --configuration Release`), iPhone 17 simulator,
+using `footprint -p <pid>`. This reports `phys_footprint`, the same figure as Xcode's memory gauge.
+
+| Scenario | Footprint |
+| --- | ---: |
+| Cold start on a fresh install, full 6-page sync, list idle with thumbnails loaded | 100–108 MB |
+| Peak during that session (`phys_footprint_peak`) | **108 MB** |
+
+That is under the 150 MB target. For comparison, the same session in Expo Go measured ~800 MB
+RSS, because it includes the Expo Go shell, the dev-mode runtime and the debugger. Don't use
+Expo Go numbers for this.
+
+Not covered by this measurement: scrolling the full list and opening detail screens. From here
+the simulator can't be driven by touch, and iOS blocks deep links behind an "Open in…?" prompt.
+The Xcode memory-gauge recording below covers those interactions.
+
 ## Recordings (to be added)
 
 Save each capture to `docs/screenshots/`. The README already embeds these paths.
@@ -86,7 +104,7 @@ Save each capture to `docs/screenshots/`. The README already embeds these paths.
 | File | How to capture |
 | --- | --- |
 | `perf-profiler.png` | React DevTools Profiler (press `j` in the Metro terminal). Record a cold start and a full scroll through the 283-breed list. |
-| `perf-memory.png` | Make a release build (`npx expo run:ios --configuration Release`), then use Xcode → Debug navigator → Memory while scrolling the full list and opening three detail screens. Target: under 150 MB. Don't use the Expo Go dev process for this: its ~800 MB includes the Expo Go shell and the debugger. |
+| `perf-memory.png` | Release build → Xcode → Debug navigator → Memory while scrolling the full list and opening three detail screens (idle figure above: 108 MB peak). |
 | `perf-fps.png` | Dev menu → Perf Monitor. Fling the list, apply filters and swipe the gallery, then record UI-thread and JS-thread FPS in the README table. |
 
 ## Screenshots captured

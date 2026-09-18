@@ -110,6 +110,15 @@ flowchart LR
 - A failed page is recorded, not fatal. `sync_meta.failedPages` drives the
   partial-failure card; `retryFailedPages()` refetches only those pages.
 - Concurrent `syncAll` calls are coalesced into the in-flight promise.
+- **Downloads are parallel; database writes are not.** expo-sqlite runs each
+  exclusive transaction on its own connection, and while one writes, any other
+  write fails at once with `database is locked`. Every repository write
+  therefore goes through `serializeWrite` (`src/data/db/writeQueue.ts`), a
+  per-database queue, and the connection sets `PRAGMA busy_timeout = 5000` as a
+  backstop. Without the queue, pages that finished downloading together were
+  wrongly recorded as failed. A Release build measured on a fresh install
+  merged only 187 of 283 breeds; after the fix, four fresh installs in a row
+  merged all 283.
 
 ### Offline
 

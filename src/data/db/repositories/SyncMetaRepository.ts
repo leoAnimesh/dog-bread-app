@@ -1,6 +1,7 @@
 import { isRecord } from '@/utils/guards';
 
 import type { Database } from '../database';
+import { serializeWrite } from '../writeQueue';
 
 /** Persisted outcome of the last sync run — drives the freshness UI. */
 export interface SyncMeta {
@@ -55,10 +56,12 @@ export function createSyncMetaRepository(db: Database): SyncMetaRepository {
     },
 
     async set(meta) {
-      await db.runAsync(
-        `INSERT INTO sync_meta (key, value) VALUES (?, ?)
-         ON CONFLICT(key) DO UPDATE SET value = excluded.value`,
-        [KEY, JSON.stringify(meta)],
+      await serializeWrite(db, () =>
+        db.runAsync(
+          `INSERT INTO sync_meta (key, value) VALUES (?, ?)
+           ON CONFLICT(key) DO UPDATE SET value = excluded.value`,
+          [KEY, JSON.stringify(meta)],
+        ),
       );
     },
   };
