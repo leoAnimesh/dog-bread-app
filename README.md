@@ -336,16 +336,28 @@ cache held **159 files, 4.5 MB** on disk, well within the 60 MB limit.
 
 ## Screenshots
 
-| Breed list: light | Breed list: dark | Filters applied |
-| :---: | :---: | :---: |
-| <img src="docs/screenshots/breed-list-light.png" width="240" /> | <img src="docs/screenshots/breed-list-dark.png" width="240" /> | <img src="docs/screenshots/filters-applied.png" width="240" /> |
-| **Detail: traits** | **Detail: gallery** | **Offline banner** |
-| <img src="docs/screenshots/detail-traits.png" width="240" /> | <img src="docs/screenshots/detail-gallery.png" width="240" /> | <img src="docs/screenshots/offline-banner.png" width="240" /> |
+Captured on the iPhone 17 simulator (iOS). Full-size images are in `docs/screenshots/`.
 
-More in `docs/screenshots/`: the filters sheet, the detail overview in light and dark.
+### Breed list
 
-*Filters applied* shows Herding + Medium + Kids 4+, which leaves 15 of 283 breeds. Removable
-chips and *Clear all* sit under the search row.
+| Light | Dark | Filters applied | Offline |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/screenshots/breed-list-light.png" width="200" alt="Breed list, light theme" /> | <img src="docs/screenshots/breed-list-dark.png" width="200" alt="Breed list, dark theme" /> | <img src="docs/screenshots/filters-applied.png" width="200" alt="Breed list with Herding, Medium and Kids 4+ filters applied" /> | <img src="docs/screenshots/offline-banner.png" width="200" alt="Breed list with offline banner" /> |
+| Grouped by breed group, synced status | Same list, dark theme | Herding + Medium + Kids 4+ → 15 of 283, removable chips | Persistent offline banner, list served from SQLite |
+
+### Filters
+
+| Refine sheet |
+| :---: |
+| <img src="docs/screenshots/filters.png" width="200" alt="Filters sheet" /> |
+| Group, size band, coat length, hypoallergenic, trait threshold; *Apply* shows the live match count |
+
+### Breed detail
+
+| Overview | Overview (dark) | Traits | Gallery |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/screenshots/detail-overview.png" width="200" alt="Detail overview tab" /> | <img src="docs/screenshots/detail-overview-dark.png" width="200" alt="Detail overview tab, dark theme" /> | <img src="docs/screenshots/detail-traits.png" width="200" alt="Detail traits tab" /> | <img src="docs/screenshots/detail-gallery.png" width="200" alt="Detail gallery tab" /> |
+| Swipeable photo header, specs, kennel clubs | Same screen, dark theme | 11 trait scores as visual scales + temperament | Swipeable large images with author / licence / source |
 
 ## Features
 
